@@ -16,7 +16,7 @@ public:
             if(first[i] != last[i]){
                 break;
             }else{
-                result.push_back(first[i]);
+                result.push_back(last[i]);
             }
         }
         return result;
