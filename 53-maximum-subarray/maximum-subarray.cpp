@@ -8,7 +8,7 @@ public:
 
         for(int i: nums){
             current += i;
-            maxsum = max(current, maxsum);
+            maxsum = max(maxsum, current);
 
             if(current < 0){
                 current = 0;
