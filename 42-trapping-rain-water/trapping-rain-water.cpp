@@ -2,6 +2,7 @@ class Solution {
 public:
     int trap(vector<int>& height) { // time complexity is O(n) and space is (1)
         int n = height.size();
+
         int l = 0, r = n-1;
         int lmax = 0, rmax = 0;
         int ans = 0;
