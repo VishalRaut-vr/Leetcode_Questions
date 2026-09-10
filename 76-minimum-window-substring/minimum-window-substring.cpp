@@ -6,7 +6,7 @@ public:
 
         unordered_map<char,int> m;
 
-        for(char&ch: t){
+        for(char& ch: t){
             m[ch]++;
         }
 
@@ -16,7 +16,7 @@ public:
 
         while(j < s.length()){
             char ch = s[j];
-
+            
             if(m[ch] > 0){
                 reqcount--;
             }
@@ -28,7 +28,6 @@ public:
                     minwin = curr;
                     start_i = i;
                 }
-
                 m[s[i]]++;
 
                 if(m[s[i]] > 0){
@@ -38,6 +37,6 @@ public:
             }
             j++;
         }
-        return minwin == INT_MAX? "" : s.substr(start_i, minwin);
+        return minwin == INT_MAX ? "" : s.substr(start_i, minwin);
     }
 };
