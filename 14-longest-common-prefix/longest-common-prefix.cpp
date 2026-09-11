@@ -1,12 +1,11 @@
 class Solution {
 public:
-    string longestCommonPrefix(vector<string>& strs) {
-        
+    string longestCommonPrefix(vector<string>& strs) {      
         if(strs.size() == 0) return "";
 
-        int n = strs.size();
         sort(strs.begin(), strs.end());
         string ans;
+
         string first = strs.front();
         string last = strs.back();
 
