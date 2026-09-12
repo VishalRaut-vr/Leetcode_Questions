@@ -9,7 +9,7 @@ public:
             count++;
         }
 
-        if(repeated.find(b) != string::npos){
+        if(repeated.find(b) != string:: npos){
             return count;
         }
 
