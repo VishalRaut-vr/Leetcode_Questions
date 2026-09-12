@@ -7,8 +7,7 @@ public:
 
         for(int i=0; i<n; i++){
             char ch = s[i];
-
-            int idx = ch - 'a';
+            int idx = ch -'a';
 
             if(indices[idx].first == -1){
                 indices[idx].first = i;
@@ -23,9 +22,7 @@ public:
             int left_idx = indices[i].first;
             int right_idx = indices[i].second;
 
-            if(left_idx == -1){
-                continue;
-            } 
+            if(left_idx == -1) continue;
 
             unordered_set<char> st;
 
