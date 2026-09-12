@@ -17,10 +17,11 @@ public:
             }else{
                 double first = 100 - discounts[i];
                 double second = prices[i] * first;
-                double third = second/100;
+                double third = second / 100;
 
                 ans += third;
             }
+            
         }
         return ans;
     }
