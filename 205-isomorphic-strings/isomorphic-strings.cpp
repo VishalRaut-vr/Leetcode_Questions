@@ -4,17 +4,16 @@ public:
     bool isIsomorphic(string s, string t) {
 
         if(s.length() != t.length()) return false;
-        
+
         unordered_map<char,char> smap;
         unordered_map<char,char> tmap;
 
         for(int i=0; i<s.length(); i++){
-            
+
             char cs = s[i];
             char ct = t[i];
 
             if(smap.count(cs) && smap[cs] != ct) return false;
-
             if(tmap.count(ct) && tmap[ct] != cs) return false;
 
             smap[cs] = ct;
