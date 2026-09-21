@@ -8,7 +8,7 @@ public:
             while(s.size() > 0 && s.top() <= nums2[i]){
                 s.pop();
             }
-            
+
             if(s.empty()){
                 m[nums2[i]] = -1;
             }else{
@@ -23,4 +23,5 @@ public:
         }
         return ans;
     }
+
 };
