@@ -4,7 +4,7 @@ public:
         if(strs.size() == 0) return "";
 
         sort(strs.begin(), strs.end());
-        string ans;
+        string ans = "";
 
         string first = strs.front();
         string last = strs.back();
