@@ -2,9 +2,8 @@ class Solution {
 public:
     vector<string> result;
 
-    void solve(int idx, string& digits, string& temp,
-               unordered_map<char, string>& mp) {
-        if (idx >= digits.length()) {
+    void solve(int idx, string& digits, string& temp,unordered_map<char, string>& mp){
+        if(idx >= digits.length()){
             result.push_back(temp);
             return;
         }
@@ -12,15 +11,16 @@ public:
         char ch = digits[idx];
         string str = mp[ch];
 
-        for (int i = 0; i < str.length(); i++) {
-            // do
+        for(int i=0; i<str.length(); i++){
+
             temp.push_back(str[i]);
-            // explore
-            solve(idx + 1, digits, temp, mp);
-            // revert
+
+            solve(idx+1, digits, temp, mp);
+
             temp.pop_back();
         }
     }
+
 
     vector<string> letterCombinations(string digits) {
         unordered_map<char, string> mp{
