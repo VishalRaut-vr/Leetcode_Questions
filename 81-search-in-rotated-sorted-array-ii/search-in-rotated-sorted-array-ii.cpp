@@ -10,6 +10,7 @@ public:
             if(nums[mid] == target){
                 return true;
             }
+            //additional line for handling duplicate values
             if(nums[left] == nums[mid] && nums[mid] == nums[right]){
                 left++;
                 right--;
