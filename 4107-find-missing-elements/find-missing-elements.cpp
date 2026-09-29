@@ -1,18 +1,25 @@
 class Solution {
 public:
     vector<int> findMissingElements(vector<int>& nums) {
-        unordered_set<int> present(nums.begin(), nums.end());
+        bool present[101] = {false};
 
-        int minval = *min_element(nums.begin(), nums.end());
-        int maxval = *max_element(nums.begin(), nums.end());
+        int minval = INT_MAX;
+        int maxval = INT_MIN;
+
+        for(int num: nums){
+            present[num] = true;
+            minval = min(minval, num);
+            maxval = max(maxval, num);
+        }
 
         vector<int> result;
 
         for(int i=minval; i<=maxval; i++){
-            if(!present.count(i)){
+            if(!present[i]){
                 result.push_back(i);
             }
         }
         return result;
     }
+
 };
