@@ -10,8 +10,7 @@ public:
 
         for(int num: nums2){
             if(freq[num] > 0){
-                result.push_back(num
-                );
+                result.push_back(num);
                 freq[num]--;
             }
         }
