@@ -3,9 +3,10 @@ public:
     vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
         unordered_map<int,int> freq;
 
-        for(int i: nums1){
+        for(int i:nums1){
             freq[i]++;
         }
+
         vector<int> result;
 
         for(int num: nums2){
