@@ -4,36 +4,67 @@ public:
         int n = nums1.size();
         int m = nums2.size();
 
-        vector<int> temp;
+        int i = 0, j = 0, k = 0;
 
-        int i = 0;
-        int j = 0;
+        int size = m + n;
 
-        while(i < n && j < m){
-            if(nums1[i] < nums2[j]){
-                temp.push_back(nums1[i]);
+        int idx1 = size / 2 - 1;
+        int element1 = -1;
+
+        int idx2 = size / 2;
+        int element2 = -1;
+
+        while (i < n && j < m) {
+            if (nums1[i] < nums2[j]) {
+                if(k == idx1){
+                    element1 = nums1[i];
+                }
+                if(k == idx2){
+                    element2 = nums1[i];
+                }
                 i++;
             }else{
-                temp.push_back(nums2[j]);
+                if(k == idx1){
+                    element1 = nums2[j];
+                }
+                if(k == idx2){
+                    element2 = nums2[j];
+                }
                 j++;
             }
+            k++;
         }
-        //remaining elements for nums1
+
+        //remaining elments from nums1
         while(i < n){
-            temp.push_back(nums1[i]);
+            if(k == idx1){
+                element1 = nums1[i];
+            }
+            if(k == idx2){
+                element2 = nums1[i];
+            }
             i++;
-        }
-        //remaining elements for nums2
+            k++;
+        } 
+        //remaining elements from nums2
         while(j < m){
-            temp.push_back(nums2[j]);
+            if(k == idx1){
+                element1 = nums2[j];
+            }
+            if(k == idx2){
+                element2 = nums2[j];
+            }
             j++;
+            k++;
         }
-        
-        int size = m+n;
-        if(size % 2 == 1){
-            return temp[size/2.0];
+
+        //calculate size 
+        if(size%2 == 1){
+            //odd
+            return element2;
         }else{
-            return (temp[size/2] + temp[size/2-1])/2.0;
+            return (element1 + element2)/2.0;
         }
+
     }
 };
