@@ -14,6 +14,7 @@ public:
 
             if(sq == x){
                 return (int)mid;
+
             }else if(sq < x){
                 ans = mid;
                 left = mid+1;
