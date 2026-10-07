@@ -5,20 +5,20 @@ public:
         vector<string> sym{"M",  "CM", "D",  "CD", "C",  "XC", "L",
                            "XL", "X",  "IX", "V",  "IV", "I"};
 
-        string result = "";
+        string ans = "";
 
-        for (int i = 0; i < 13; i++) {
-
-            if (num == 0)
+        for(int i=0; i<13; i++){
+            if(num == 0){
                 break;
+            }
 
             int times = num / val[i];
 
-            while (times--) {
-                result += sym[i];
+            while(times--){
+                ans += sym[i];
             }
             num = num % val[i];
         }
-        return result;
+        return ans;
     }
 };
