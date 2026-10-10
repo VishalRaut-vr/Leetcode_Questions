@@ -6,7 +6,6 @@ public:
         for(char& ch: s){
             count[ch-'a']++;
         }
-
         for(char& ch: t){
             count[ch-'a']--;
         }
@@ -14,7 +13,6 @@ public:
         bool allzeros = all_of(begin(count), end(count), [](int element){
             return element == 0;
         });
-
         return allzeros;
     }
 };
