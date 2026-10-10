@@ -6,14 +6,15 @@ public:
         int minval = INT_MAX;
         int maxval = INT_MIN;
 
+        vector<int> result;
+
         for(int num: nums){
             present[num] = true;
             minval = min(minval, num);
             maxval = max(maxval, num);
+            
+
         }
-
-        vector<int> result;
-
         for(int i=minval; i<=maxval; i++){
             if(!present[i]){
                 result.push_back(i);
@@ -21,5 +22,4 @@ public:
         }
         return result;
     }
-
 };
