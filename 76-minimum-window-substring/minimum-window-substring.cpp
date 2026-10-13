@@ -1,7 +1,6 @@
 class Solution {
 public:
     string minWindow(string s, string t) {
-
         if(t.length() > s.length()) return "";
 
         unordered_map<char,int> m;
@@ -16,7 +15,7 @@ public:
 
         while(j < s.length()){
             char ch = s[j];
-            
+
             if(m[ch] > 0){
                 reqcount--;
             }
@@ -36,7 +35,9 @@ public:
                 i++;
             }
             j++;
+            
         }
-        return minwin == INT_MAX ? "" : s.substr(start_i, minwin);
+        
+        return minwin == INT_MAX ? "": s.substr(start_i, minwin);
     }
 };
