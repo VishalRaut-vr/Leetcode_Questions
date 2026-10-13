@@ -5,14 +5,7 @@ public:
 
         int n = nums.size();
 
-        int a = nums[n-1]; //largest number
-        int b = nums[n-2]; //second largest number
-
-        int c = nums[0]; //smallest number
-        int d = nums[1]; //second smallest
-
-        int ans = (a * b) - (c * d); //formula
-
-        return ans;
+        return (nums[n-1] * nums[n-2]) 
+             - (nums[0] * nums[1]);
     }
 };
