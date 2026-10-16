@@ -5,7 +5,7 @@ public:
 
         unordered_map<char,int> m;
 
-        for(char& ch: t){
+        for(char ch: t){
             m[ch]++;
         }
 
@@ -35,9 +35,7 @@ public:
                 i++;
             }
             j++;
-            
         }
-        
         return minwin == INT_MAX ? "": s.substr(start_i, minwin);
     }
 };
