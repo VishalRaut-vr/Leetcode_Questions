@@ -12,6 +12,7 @@ public:
                 st.pop();
 
                 int val = max(2*top, 1);
+
                 st.top() += val;
             }
         }
