@@ -1,11 +1,11 @@
 class Solution {
 public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
-        int n = matrix[0].size();
         int m = matrix.size();
+        int n = matrix[0].size();
 
-        int r = 0;
         int c = n-1;
+        int r = 0;
 
         while(r < m && c >= 0){
             if(target == matrix[r][c]){
@@ -16,6 +16,7 @@ public:
                 r++;
             }
         }
+        
         return false;
     }
 };
