@@ -1,8 +1,8 @@
 class Solution {
 public:
     int minAddToMakeValid(string s) {
-        int close = 0;
         int open = 0;
+        int close = 0;
 
         for(char ch: s){
             if(ch == '('){
