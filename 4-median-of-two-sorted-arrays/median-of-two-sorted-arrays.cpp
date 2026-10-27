@@ -5,17 +5,16 @@ public:
         int m = nums2.size();
 
         int i = 0, j = 0, k = 0;
+        int size = m+n;
 
-        int size = m + n;
-
-        int idx1 = size / 2 - 1;
+        int idx1 = size/2 - 1;
         int element1 = -1;
 
-        int idx2 = size / 2;
+        int idx2 = size/2;
         int element2 = -1;
 
-        while (i < n && j < m) {
-            if (nums1[i] < nums2[j]) {
+        while(i < n && j < m){
+            if(nums1[i] < nums2[j]){
                 if(k == idx1){
                     element1 = nums1[i];
                 }
@@ -35,7 +34,6 @@ public:
             k++;
         }
 
-        //remaining elments from nums1
         while(i < n){
             if(k == idx1){
                 element1 = nums1[i];
@@ -45,8 +43,8 @@ public:
             }
             i++;
             k++;
-        } 
-        //remaining elements from nums2
+        }
+
         while(j < m){
             if(k == idx1){
                 element1 = nums2[j];
@@ -58,13 +56,10 @@ public:
             k++;
         }
 
-        //calculate size 
         if(size%2 == 1){
-            //odd
             return element2;
         }else{
             return (element1 + element2)/2.0;
         }
-
     }
 };
