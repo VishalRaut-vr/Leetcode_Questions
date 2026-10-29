@@ -1,27 +1,51 @@
 class Solution {
 public:
-    vector<int> searchRange(vector<int>& nums, int target) {
-        // Find first index where nums[i] >= target
-        auto first = lower_bound(nums.begin(), nums.end(), target);
-        // Type: vector<int>::iterator (deduced by auto)
-        // Points to first element >= target (or end if none)
-        
-        // Find first index where nums[i] > target
-        auto last = upper_bound(nums.begin(), nums.end(), target);
-        // Type: vector<int>::iterator
-        // Points to first element > target (or end if none)
-        
-        // Check if target exists
-        if(first == nums.end() || *first != target){
-            // first == end → target > all elements
-            // *first != target → first element >= target is not target
-            return {-1, -1};
+
+    int firstpos(vector<int>& nums, int target){
+        int left = 0;
+        int right = nums.size()-1;
+        int ans = -1;
+
+        while(left <= right){
+            int mid = left + (right-left)/2;
+
+            if(nums[mid] == target){
+                ans = mid;
+                right = mid-1;
+            }else if(nums[mid] < target){
+                left = mid+1;
+
+            }else{
+                right = mid-1;
+            }
         }
-        
-        // Calculate indices using iterator arithmetic
-        // first - nums.begin() = index of first occurrence
-        // last - nums.begin() - 1 = index of last occurrence
-        // (int) cast to avoid narrowing warning
-        return {(int)(first - nums.begin()), (int)(last - nums.begin() - 1)};
+        return ans;
+    }
+
+    int lastpos(vector<int>& nums, int target){
+        int left = 0;
+        int right = nums.size()-1;
+        int ans = -1;
+
+        while(left <= right){
+            int mid = left + (right-left)/2;
+
+            if(nums[mid] == target){
+                ans = mid;
+                left = mid+1;
+            }else if(nums[mid] < target){
+                left = mid+1;
+            }else{
+                right = mid-1;
+            }
+        }
+        return ans;
+    }
+
+    vector<int> searchRange(vector<int>& nums, int target) {
+        int first = firstpos(nums, target);
+        int last = lastpos(nums, target);
+
+        return {first, last};
     }
 };
