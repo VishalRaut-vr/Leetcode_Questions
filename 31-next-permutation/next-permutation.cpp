@@ -2,18 +2,19 @@ class Solution {
 public:
     void nextPermutation(vector<int>& A) {
         int n = A.size();
-        int pivot = -1;
 
+        int pivot = -1;
+        
         for(int i=n-2; i>=0; i--){
             if(A[i] < A[i+1]){
                 pivot = i;
                 break;
             }
-        }      
+        }
 
         if(pivot == -1){
             reverse(A.begin(), A.end());
-            return;
+            return ;
         }
 
         for(int i=n-1; i>pivot; i--){
@@ -31,4 +32,3 @@ public:
         }
     }
 };
-
