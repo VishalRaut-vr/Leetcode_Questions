@@ -34,6 +34,7 @@ public:
                 count2++;
             }
         }
+
         vector<int> ans;
 
         if(count1 > nums.size()/3){
@@ -42,6 +43,7 @@ public:
         if(count2 > nums.size()/3){
             ans.push_back(candidate2);
         }
+
         return ans;
     }
 };
