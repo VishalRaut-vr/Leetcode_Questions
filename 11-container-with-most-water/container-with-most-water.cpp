@@ -4,7 +4,7 @@ public:
         int n = height.size();
 
         int lp = 0;
-        int rp = n-1;
+        int rp = n - 1;
         int maxwater = 0;
 
         while(lp < rp){
